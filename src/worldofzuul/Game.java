@@ -13,28 +13,54 @@ public class Game
     }
 
 
-    private void createRooms()
+private void createRooms()
     {
-        Room outside, theatre, pub, lab, office;
-      
+        Room outside, semesterProject, objectOriented, softwareEngeneering, computersystem,projektlokal, onlineCourse, bar, library, cafe, secondSemester ;
+ 
         outside = new Room("outside the main entrance of the university");
-        theatre = new Room("in a lecture theatre");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        onlineCourse = new Room("in online course class");
+        semesterProject = new Room("in Group local rooms with your group members");
+        objectOriented = new Room("in Object oriented programming");
+        softwareEngeneering = new Room("in the Introduction to software engineering ");
+        computersystem = new Room("in the Computer System Room");
+        bar = new Room("in the bar");
+        library = new Room("in the library");
+        cafe = new Room("in the cafe");
+        secondSemester = new Room ("in the entrance to second semester");
+        projektlokal = new Room ("in the projekt lokal room");
         
-        outside.setExit("east", theatre);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
-
-        theatre.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
+        outside.setExit("east", computersystem);
+        outside.setExit("south", secondSemester);
+        outside.setExit("west", objectOriented);
+        outside.setExit("north", softwareEngeneering);
+        
+        softwareEngeneering.setExit("north", library); 
+        softwareEngeneering.setExit("south",outside);
+        softwareEngeneering.setExit("east", onlineCourse);
+        softwareEngeneering.setExit("west", semesterProject);
+       
+        
+        semesterProject.setExit("north", library);
+        semesterProject.setExit("south", objectOriented);
+        semesterProject.setExit("east", softwareEngeneering);
+        semesterProject.setExit("west", projektlokal);
+        
+        
+        objectOriented.setExit("north", semesterProject);
+        objectOriented.setExit("south", cafe);
+        objectOriented.setExit("east", outside);
+        objectOriented.setExit("west", library);
+        
+        onlineCourse.setExit("north", bar);
+        onlineCourse.setExit("south", computersystem);
+        onlineCourse.setExit("east", library);
+        onlineCourse.setExit("west", softwareEngeneering);
+        
+        computersystem.setExit("north", onlineCourse);
+        computersystem.setExit("south", cafe);
+        computersystem.setExit("east", library);
+        computersystem.setExit("west", outside);
+        
 
         currentRoom = outside;
     }
