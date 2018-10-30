@@ -49,7 +49,6 @@ public class Room {
         return exits.get(direction);
         
         
-        
     }
 
     //Get items from the room 
