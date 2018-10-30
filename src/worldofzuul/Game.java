@@ -13,7 +13,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    Room outside, semesterProject, objectOriented, softwareEngeneering, computersystem,projektlokal, onlineCourse, bar, library, cafe, secondSemester, Task ;
+    Room outside, semesterProject, objectOriented, softwareEngeneering, computersystem,SemesterProject, onlineCourse, bar, library, cafe, secondSemester, Task ;
     ArrayList<Item> inventory = new ArrayList<Item>();
     
     public Game() 
@@ -65,7 +65,7 @@ private void createRooms()
         library = new Room("in the library");
         cafe = new Room("in the cafe");
         secondSemester = new Room ("in the entrance to second semester");
-        projektlokal = new Room ("in the projekt lokal room");
+        semesterProject = new Room ("in the projekt lokal room");
         
         outside.setExit("east", computersystem);
         outside.setExit("south", secondSemester);
@@ -76,48 +76,48 @@ private void createRooms()
         softwareEngeneering.setExit("south",outside);
         softwareEngeneering.setExit("east", onlineCourse);
         softwareEngeneering.setExit("west", semesterProject);
-      
         
+       
+        library.setExit("east", secondSemester);
+        library.setExit("north", objectOriented);
         
+        cafe.setExit("north", computersystem);
+        cafe.setExit("west", secondSemester);
         
-        //   public void addTask(Task task){
-       // tasks.add(task);
-        
-    //public void setExit(String direction, Room neighbor) {
-      //  exits.put(direction, neighbor);
-        
-        
-        
-        semesterProject.setExit("north", library);
+        secondSemester.setExit("north", outside);
+        secondSemester.setExit("east", cafe);
+        secondSemester.setExit("west", library);
         semesterProject.setExit("south", objectOriented);
         semesterProject.setExit("east", softwareEngeneering);
-        semesterProject.setExit("west", projektlokal);
+   
         
         
         objectOriented.setExit("north", semesterProject);
-        objectOriented.setExit("south", cafe);
+        objectOriented.setExit("south", library);
         objectOriented.setExit("east", outside);
-        objectOriented.setExit("west", library);
+  
        
         Task task = null;
         
         objectOriented.addTask(task);
         
-        onlineCourse.setExit("north", bar);
+      
         onlineCourse.setExit("south", computersystem);
-        onlineCourse.setExit("east", library);
         onlineCourse.setExit("west", softwareEngeneering);
         
         computersystem.setExit("north", onlineCourse);
         computersystem.setExit("south", cafe);
-        computersystem.setExit("east", library);
         computersystem.setExit("west", outside);
-        inventory.add(new Item("Computer"));
+       
         
+        inventory.add(new Item("Computer"));
         objectOriented.setItem(new Item("Robot"));
         computersystem.setItem(new Item("Robot"));
         onlineCourse.setItem(new Item("Robot"));
         softwareEngeneering.setItem(new Item("Robot"));
+        
+        
+        
 
         currentRoom = outside;
     }
