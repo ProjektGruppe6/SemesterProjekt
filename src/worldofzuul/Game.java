@@ -99,7 +99,9 @@ private void createRooms()
         objectOriented.setExit("east", outside);
         objectOriented.setExit("west", library);
        
+        Task task = null;
         
+        objectOriented.addTask(task);
         
         onlineCourse.setExit("north", bar);
         onlineCourse.setExit("south", computersystem);
