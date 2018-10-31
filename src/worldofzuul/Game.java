@@ -13,8 +13,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    Room outside, semesterProject, objectOriented, softwareEngeneering, computersystem,SemesterProject, onlineCourse, bar, library, cafe, secondSemester, Task ;
-    ArrayList<Item> inventory = new ArrayList<Item>();
+    Room outside, semesterProject, objectOriented, softwareEngineering, computersystem,SemesterProject, onlineCourse, bar, library, cafe, secondSemester, Task ;
+    ArrayList<Item> material = new ArrayList<Item>();
     
     public Game() 
     {
@@ -54,72 +54,95 @@ private void createTask(){
 
 private void createRooms()
     {
-       
+       // Here we have 11 Rooms
+        
         outside = new Room("outside the main entrance of the university");
         onlineCourse = new Room("in online course class");
         semesterProject = new Room("in Group local rooms with your group members");
         objectOriented = new Room("in Object oriented programming");
-        softwareEngeneering = new Room("in the Introduction to software engineering ");
+        softwareEngineering = new Room("in the Introduction to software engineering ");
         computersystem = new Room("in the Computer System Room");
         bar = new Room("in the bar");
         library = new Room("in the library");
         cafe = new Room("in the cafe");
         secondSemester = new Room ("in the entrance to second semester");
-        semesterProject = new Room ("in the projekt lokal room");
+        semesterProject = new Room ("in the semester project room");
+        
+        // Exits from outside 
         
         outside.setExit("east", computersystem);
         outside.setExit("south", secondSemester);
         outside.setExit("west", objectOriented);
-        outside.setExit("north", softwareEngeneering);
+        outside.setExit("north", softwareEngineering);
         
-        softwareEngeneering.setExit("north", library); 
-        softwareEngeneering.setExit("south",outside);
-        softwareEngeneering.setExit("east", onlineCourse);
-        softwareEngeneering.setExit("west", semesterProject);
+        // Exits from Software engineering Room
         
+        softwareEngineering.setExit("north", library); 
+        softwareEngineering.setExit("south",outside);
+        softwareEngineering.setExit("east", onlineCourse);
+        softwareEngineering.setExit("west", semesterProject);
+        
+        // Exits from library
        
         library.setExit("east", secondSemester);
         library.setExit("north", objectOriented);
         
+        // Exits from cafe
+       
         cafe.setExit("north", computersystem);
         cafe.setExit("west", secondSemester);
+        
+        // Exits form Second semester Room
         
         secondSemester.setExit("north", outside);
         secondSemester.setExit("east", cafe);
         secondSemester.setExit("west", library);
         semesterProject.setExit("south", objectOriented);
-        semesterProject.setExit("east", softwareEngeneering);
+        semesterProject.setExit("east", softwareEngineering);
    
-        
+        // Exits from object oriented Room
         
         objectOriented.setExit("north", semesterProject);
         objectOriented.setExit("south", library);
         objectOriented.setExit("east", outside);
   
-       
-        Task task = null;
+        // Task 
         
+        Task task = null;
         objectOriented.addTask(task);
         
-      
+        // Exits from online course
+        
         onlineCourse.setExit("south", computersystem);
-        onlineCourse.setExit("west", softwareEngeneering);
+        onlineCourse.setExit("west", softwareEngineering);
+        
+        // Exits from Computer System
         
         computersystem.setExit("north", onlineCourse);
         computersystem.setExit("south", cafe);
         computersystem.setExit("west", outside);
        
+        // Materials added when u start the course
         
-        inventory.add(new Item("Computer"));
-        objectOriented.setItem(new Item("Robot"));
-        computersystem.setItem(new Item("Robot"));
-        onlineCourse.setItem(new Item("Robot"));
-        softwareEngeneering.setItem(new Item("Robot"));
-        
-        
-        
+        material.add(new Item(" Student ID"));
+        material.add(new Item(" Computer / Laptop"));
+        material.add(new Item(" BlackBoard UserName and Password"));
 
+        
+        // Materials added in the Rooms laptop and books
+        
+        // Items laptop
+        onlineCourse.setItem(new Item(" Laptop"));
+        softwareEngineering.setItem(new Item(" Laptop"));
+        objectOriented.setItem(new Item(" Laptop"));
+        
+        // Items --- books
+        computersystem.setItem(new Item(" Computer Science"));
+        objectOriented.setItem(new Item(" Introduction to Java Programmering"));
+        softwareEngineering.setItem(new Item(" Introduction to Software Engineering"));
+         
         currentRoom = outside;
+        
     }
 
     public void play() 
@@ -137,12 +160,16 @@ private void createRooms()
 
     private void printWelcome()
     {
+        
         System.out.println();
+        System.out.println("****************************************************************");
         System.out.println("Welcome to the Fresh Man Game!");
         System.out.println("You are about to start Software Engennering at SDU.");
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
+        System.out.println("Type '" + CommandWord.HELP + "'");
+        System.out.println("Collect some material for the study");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
+        System.out.println("****************************************************************");
     }
 
     private boolean processCommand(Command command) 
@@ -166,7 +193,7 @@ private void createRooms()
             case QUIT:
                 wantToQuit = quit(command);
                 break;
-            case INVENTORY:
+            case MATERIALS:
                 printInventory();
                 break;
             
@@ -219,10 +246,14 @@ private void createRooms()
 
     private void printInventory() {
         String output = ("");
-        for (int i = 0; i < inventory.size(); i++) {
-          output += inventory.get(i).getDescription() + " " ;
+        for (int i = 0; i < material.size(); i++) {
+          output += material.get(i).getDescription() + " " ;
         }
-        System.out.println("you are Carrying :");
+        /* logic to ask what kind of inventory he or she would like to have ?
+         System.out.println("would u like to have computer ?");
+        */
+        
+        System.out.println("Now You Have :");
         System.out.println(output);
     }
 }
