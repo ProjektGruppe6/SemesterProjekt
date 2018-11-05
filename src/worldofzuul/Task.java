@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Jonas
+ * @author abli
  */
 public class Task {
 

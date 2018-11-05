@@ -12,6 +12,7 @@ public class Room {
     
     ArrayList<Item> items = new ArrayList<Item>();
     ArrayList<Task> tasks = new ArrayList<Task>();
+  
 
     public Room(String description) {
         this.description = description;
@@ -28,10 +29,13 @@ public class Room {
 
     public String getShortDescription() {
         return description;
+        
     }
 
     public String getLongDescription() {
-        return "You are " + description + ".\n" + getExitString();
+        return " \nYou are " + description + "" + getExitString();
+           
+    
 
     }
 
@@ -40,7 +44,7 @@ public class Room {
         Set keys = exits.keySet();
         for (Iterator iter  = keys.iterator(); iter.hasNext();)
             returnString += " " + iter.next();
-         returnString += "\nItems in the Room";   
+         returnString += "\nItems in the Room :";   
          returnString += getRoomItems();
          return returnString;
     }
@@ -69,8 +73,9 @@ public class Room {
         String output = ("");
         for (int i = 0; i < items.size(); i++) {
             output += items.get(i).getDescription() + " ";
+           
         }
         return output;
-
+        
     }
 }
