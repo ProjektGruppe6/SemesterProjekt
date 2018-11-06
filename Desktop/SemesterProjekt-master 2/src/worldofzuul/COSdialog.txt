@@ -1,0 +1,73 @@
+Oh Hello There!
+Welcome to Computer Systems here at SDU.
+My name is Eric and I will be your teacher this semester.
+
+What would you like to do?
+>Information  >Begin Test
+
+
+Information:
+If you want to be a great programmer you have to know the basics of a computer!
+This course will take you through many exciting and interesting subjects, so you can become a great programmer one day.
+Now lets begin...
+
+As I said Computer Science is ALL about the understanding of every little nooks and crannies of a computer.
+A computer is made up of the following components: the hardware and the software. 
+The hardware that is normally found in a PC is:
+
+> MOTHERBOARD  
+> CPU 
+> RAM
+> HHD/SSD
+> PSU
+
+These are the most important hardware components of a PC. 
+To quickly go through these components,The Motherboard holds holds all the parts together,
+a certain amount of slots for each part. Here is where the RAM and the CPU located. 
+The CPU or Central Processing Unit is what many people normally will call the brain of a PC. 
+CPUs are built by placing billions of microscopic transistors onto a single computer chip. 
+Those transistors allow it to make the calculations it needs to run programs that are stored on your system’s memory.
+RAM or Random Access Memory is a form of Data storage that stores Data and Machine code currently being used. 
+This Data could be anything from Operating Systems like Windows,MacOS X, Unix and so on.. to important Data that contains 
+code for specific tasks.The most important feature of a RAM is the speed of which the Data can be accessed.
+HHD/SSD in where most of the Data is store. These drivers are slow(er) compared to the RAM, 
+but there are more practical in a sense that you can store huge amount of Data that you don't always need to have access to.
+HHD stand for Hard Disk Drive and SSD for Solid State Drive. Also these two differ in the way the data is being stored-
+but this will not be discussed any further in this course.
+And the last thing in a PC is the PSU. PSU stands for Power Supply Unit and this component makes sure that the PC gets
+the right amount of watt to ensure that every thing can run optimally.
+
+
+The second important component is the software...
+....
+......
+........
+
+
+Now lets see, Are you ready to take the test?
+>yes      >no
+
+yes:
+Excellent !! 
+Answer all 3 questions correctly and you will pass this course.
+Good Luck!
+
+
+
+no:
+Well that is okay. Feel free to read the information one more time
+//(information loaded again)
+
+
+//The Questions.
+COS;What does SSD stands for?:Static Solid Drive,Solid Static Drive,Simple Static Drive;Solid Static Drive
+COS;What does RAM do?;Store huge Data,Store important Data,Store current Data;Store current Data
+COS;Where is the CPU allocated?;On its own,On the motherboard;Somewhere else;On the motherboard
+
+
+//Test passed.
+Hurray!!
+You answered all the questions correctly and you passed the test.
+You earned a PC this can be used for your final exam.
+//player gets PC(key)
+
