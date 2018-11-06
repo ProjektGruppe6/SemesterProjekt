@@ -14,7 +14,7 @@
  * If the command had only one word, then the second word is <null>.
  * 
  * @author  Michael Kolling and David J. Barnes
- * @version 2006.03.30
+ * @version 2006.03.30 AMSAL
  */
 
 package worldofzuul;
